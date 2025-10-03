@@ -1,2 +1,7 @@
 groq
 xhtml2pdf
+Django==4.2.7
+python-decouple==3.8
+requests==2.31.0
+python-jose==3.3.0
+cryptography==41.0.7
