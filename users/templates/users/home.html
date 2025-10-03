@@ -26,8 +26,9 @@
             </div>
         </div>
         <div class="hero-animation">
-            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_vybwn7df.json" 
-                           background="transparent" speed="1" loop autoplay></lottie-player>
+            <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js" type="module"></script>
+            <dotlottie-wc src="https://lottie.host/d7a1ad7d-df72-4336-b6cd-28240a348d98/XhxdoqBjnd.lottie"
+                style="width: 550px;height: 400px" autoplay loop></dotlottie-wc>
         </div>
     </div>
 </section>
@@ -66,7 +67,8 @@
         <div class="swiper-wrapper">
             <!-- Course Card Example -->
             <div class="swiper-slide course-card">
-                <img src="https://images.unsplash.com/photo-1526379879527-8559ecfcaec0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Python Programming">
+                <img src="https://images.unsplash.com/photo-1526379879527-8559ecfcaec0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Python Programming">
                 <h3>Python Programming</h3>
                 <p>Learn Python from basics to advanced projects.</p>
                 <div class="course-meta">
@@ -76,7 +78,8 @@
                 <a href="{% url 'signup' %}" class="btn-primary">Enroll Now</a>
             </div>
             <div class="swiper-slide course-card">
-                <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Web Development">
+                <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Web Development">
                 <h3>Web Development</h3>
                 <p>HTML, CSS, JavaScript, and Django full stack course.</p>
                 <div class="course-meta">
@@ -86,7 +89,8 @@
                 <a href="{% url 'signup' %}" class="btn-primary">Enroll Now</a>
             </div>
             <div class="swiper-slide course-card">
-                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AI & Machine Learning">
+                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="AI & Machine Learning">
                 <h3>AI & Machine Learning</h3>
                 <p>Master AI concepts with hands-on projects.</p>
                 <div class="course-meta">
@@ -96,7 +100,8 @@
                 <a href="{% url 'signup' %}" class="btn-primary">Enroll Now</a>
             </div>
             <div class="swiper-slide course-card">
-                <img src="https://images.unsplash.com/photo-1662638600476-d563fffbb072?w=600&auto=format&fit=crop&q=60" alt="Data Science">
+                <img src="https://images.unsplash.com/photo-1662638600476-d563fffbb072?w=600&auto=format&fit=crop&q=60"
+                    alt="Data Science">
                 <h3>Data Science</h3>
                 <p>Learn data analysis, visualization, and machine learning.</p>
                 <div class="course-meta">
@@ -156,41 +161,41 @@
 
 
 <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-logo">EduConnectHub</div>
-            <div class="footer-social">
-                <a href="https://github.com/iradhikagosain">Github</a>
-                <a href="https://in.linkedin.com/in/radhika-gosain-718708324">Linkedin</a>
-                <a href="#">Instagram</a>
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">EduConnectHub</div>
+        <div class="footer-social">
+            <a href="https://github.com/iradhikagosain">Github</a>
+            <a href="https://in.linkedin.com/in/radhika-gosain-718708324">Linkedin</a>
+            <a href="#">Instagram</a>
+        </div>
+        <div class="footer-links">
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                </ul>
             </div>
-            <div class="footer-links">
-                <div>
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#courses">Courses</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Support</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Contact</h4>
-                    <p>Email: support@educonnecthub.com</p>
-                    <p>Phone: +91 1234567890</p>
-                </div>
+            <div>
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p>Email: support@educonnecthub.com</p>
+                <p>Phone: +91 1234567890</p>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    
+
 {% endblock %}
 
 {% block extra_js %}
