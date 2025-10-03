@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #5D1218;
+    z-index: 999;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffb3b6;
+}
+
+.btn-nav {
+    background: #A02A2D;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.btn-nav:hover {
+    background: #7E1D21;
+    transform: scale(1.05);
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* ===== Delete Account Styles ===== */
+.delete-account-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.warning-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #A02A2D;
+}
+
+.warning-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #A02A2D, #FF6B6B);
+}
+
+.warning-icon {
+    margin-bottom: 1.5rem;
+}
+
+.warning-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #5D1218;
+    margin-bottom: 0.5rem;
+}
+
+.warning-subtitle {
+    font-size: 1.1rem;
+    color: #A02A2D;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+/* ===== Warning Details ===== */
+.warning-details {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.warning-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+}
+
+.warning-item:last-child {
+    margin-bottom: 0;
+}
+
+.warning-item span {
+    color: #5D1218;
+    font-weight: 500;
+    line-height: 1.5;
+    flex: 1;
+}
+
+/* ===== Confirmation Box ===== */
+.confirmation-box {
+    background: #fff5f5;
+    border: 2px solid #fed7d7;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    text-align: left;
+}
+
+.checkbox-group input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    border: 2px solid #A02A2D;
+    border-radius: 4px;
+    margin-right: 0.75rem;
+    position: relative;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.checkbox-group input[type="checkbox"]:checked ~ label .checkmark {
+    background: #A02A2D;
+    border-color: #A02A2D;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-group input[type="checkbox"]:checked ~ label .checkmark:after {
+    display: block;
+}
+
+.checkbox-group label {
+    color: #5D1218;
+    font-weight: 500;
+    line-height: 1.5;
+    cursor: pointer;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* ===== Form Actions ===== */
+.delete-form {
+    margin-top: 2rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-decoration: none;
+    min-width: 160px;
+    gap: 0.5rem;
+}
+
+.btn-cancel {
+    background: transparent;
+    color: #666;
+    border: 2px solid #e9ecef;
+}
+
+.btn-cancel:hover {
+    background: #f8f9fa;
+    border-color: #A02A2D;
+    color: #A02A2D;
+}
+
+.btn-delete {
+    background: linear-gradient(135deg, #A02A2D 0%, #FF6B6B 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(160, 42, 45, 0.3);
+}
+
+.btn-delete:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(160, 42, 45, 0.4);
+    background: linear-gradient(135deg, #FF6B6B 0%, #A02A2D 100%);
+}
+
+.btn-delete:disabled {
+    background: #e9ecef;
+    color: #a0aec0;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .delete-account-container {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+    
+    .warning-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .warning-content h2 {
+        font-size: 1.75rem;
+    }
+    
+    .warning-details {
+        padding: 1rem;
+    }
+    
+    .confirmation-box {
+        padding: 1rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .checkbox-group label {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,87 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/edit_teacher_profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="edit-profile-container">
+    <div class="profile-header">
+        <h2>Edit Your Profile</h2>
+        <p>Update your personal information and preferences</p>
+    </div>
+    
+    <form method="POST" enctype="multipart/form-data" class="edit-profile-form">
+        {% csrf_token %}
+        
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="id_first_name">First Name</label>
+                {{ form.first_name }}
+            </div>
+            
+            <div class="form-group">
+                <label for="id_last_name">Last Name</label>
+                {{ form.last_name }}
+            </div>
+
+            <div class="form-group full-width">
+                <label for="id_email">Email Address</label>
+                {{ form.email }}
+            </div>
+
+            <div class="form-group">
+                <label for="id_qualification">Qualification</label>
+                {{ form.qualification }}
+            </div>
+
+            <div class="form-group">
+                <label for="id_experience">Experience (Years)</label>
+                {{ form.experience }}
+            </div>
+
+            <div class="form-group full-width">
+                <label for="id_bio">Bio</label>
+                {{ form.bio }}
+                <div class="char-count">0/500 characters</div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="id_profile_pic">Profile Picture</label>
+                <div class="file-upload-area">
+                    <div class="upload-preview">
+                        <div class="preview-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="#A02A2D" stroke-width="2"/>
+                                <path d="M20 17.5C20 19.9853 20 22 12 22C4 22 4 19.9853 4 17.5C4 15.0147 7.58172 13 12 13C16.4183 13 20 15.0147 20 17.5Z" stroke="#A02A2D" stroke-width="2"/>
+                            </svg>
+                            <p>No image selected</p>
+                        </div>
+                    </div>
+                    <div class="file-input-wrapper">
+                        {{ form.profile_pic }}
+                        <label for="id_profile_pic" class="file-upload-label">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 13H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10 9H9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Choose Profile Picture
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <a href="{% url 'teacher_dashboard' %}" class="btn btn-cancel">Cancel</a>
+            <button type="submit" class="btn btn-submit">Update Profile</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,152 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block title %}{{ teacher.first_name }}'s Profile - EduConnectHub{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/teacher_profile_details.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="teacher-profile-section">
+    <div class="container">
+        <!-- Back Button -->
+        <div class="back-nav">
+            <a href="{% url 'teacher_profiles' %}" class="btn-back">
+                ← Back to All Teachers
+            </a>
+        </div>
+
+        <!-- Teacher Profile Header -->
+        <div class="profile-header">
+            <div class="profile-avatar">
+                {% if teacher.profile_pic %}
+                    <img src="{{ teacher.profile_pic.url }}" alt="{{ teacher.first_name }}">
+                {% else %}
+                    <div class="avatar-placeholder">
+                        <span class="avatar-icon">👨‍🏫</span>
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div class="profile-info">
+                <h1 class="profile-name">{{ teacher.username }} </h1>
+                
+                <div class="profile-details">
+                    {% if teacher.subjects %}
+                    <div class="detail-item">
+                        <span class="detail-icon">📚</span>
+                        <div class="detail-content">
+                            <strong>Subjects:</strong>
+                            <span>{{ teacher.subjects }}</span>
+                        </div>
+                    </div>
+                    {% endif %}
+                    
+                    {% if teacher.experience %}
+                    <div class="detail-item">
+                        <span class="detail-icon">💼</span>
+                        <div class="detail-content">
+                            <strong>Experience:</strong>
+                            <span>{{ teacher.experience }} years</span>
+                        </div>
+                    </div>
+                    {% endif %}
+                    
+                    {% if teacher.college %}
+                    <div class="detail-item">
+                        <span class="detail-icon">🏫</span>
+                        <div class="detail-content">
+                            <strong>College:</strong>
+                            <span>{{ teacher.college.name }}</span>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                
+                {% if teacher.bio %}
+                <div class="profile-bio">
+                    <h3>About Teacher</h3>
+                    <p>{{ teacher.bio }}</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Teacher's Resources -->
+        <div class="resources-section">
+            <div class="resources-grid">
+                <!-- Notes Section -->
+                <div class="resource-card notes-card">
+                    <div class="resource-header">
+                        <h2>📚 Notes</h2>
+                        <span class="resource-count">{{ notes.count }}</span>
+                    </div>
+                    
+                    <div class="resource-list">
+                        {% if notes %}
+                            {% for note in notes %}
+                            <div class="resource-item">
+                                <div class="resource-info">
+                                    <h4>{{ note.title }}</h4>
+                                    <div class="resource-meta">
+                                        <span class="subject">{{ note.subject }}</span>
+                                        <span class="date">{{ note.upload_date|date:"M d, Y" }}</span>
+                                    </div>
+                                </div>
+                                <div class="resource-actions">
+                                    <a href="{{ note.file.url }}" class="btn-download" download>
+                                        Download
+                                    </a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="no-resources">
+                                <p>No notes uploaded yet.</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Lectures Section -->
+                <div class="resource-card lectures-card">
+                    <div class="resource-header">
+                        <h2>🎥 Lectures</h2>
+                        <span class="resource-count">{{ lectures.count }}</span>
+                    </div>
+                    
+                    <div class="resource-list">
+                        {% if lectures %}
+                            {% for lecture in lectures %}
+                            <div class="resource-item">
+                                <div class="resource-info">
+                                    <h4>{{ lecture.title }}</h4>
+                                    <div class="resource-meta">
+                                        <span class="subject">{{ lecture.subject }}</span>
+                                        <span class="date">{{ lecture.upload_date|date:"M d, Y" }}</span>
+                                    </div>
+                                </div>
+                                <div class="resource-actions">
+                                    <a href="{{ lecture.video.url }}" class="btn-watch" target="_blank">
+                                        Watch
+                                    </a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="no-resources">
+                                <p>No lectures uploaded yet.</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/teacher_profile_details.js' %}"></script>
+{% endblock %}

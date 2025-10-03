@@ -1,0 +1,198 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block title %}Home - EduConnectHub{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="hero-text" style="margin-left: 150px;">
+            <h1>Smart Education for the Digital Age</h1>
+            <p>Experience personalized learning with AI-powered tools, interactive courses, and expert instructors.</p>
+            <div class="hero-buttons">
+                <a href="{% url 'signup' %}" class="btn-primary">Get Started</a>
+                <a href="#courses" class="btn-secondary">Explore Courses</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><span class="count">50K+</span> Students</div>
+                <div class="stat"><span class="count">500+</span> Courses</div>
+                <div class="stat"><span class="count">95%</span> Success Rate</div>
+            </div>
+        </div>
+        <div class="hero-animation">
+            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_vybwn7df.json" 
+                           background="transparent" speed="1" loop autoplay></lottie-player>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features" id="features">
+    <h2 class="section-title">Our Features</h2>
+    <div class="feature-cards">
+        <div class="card">
+            <div class="icon">📚</div>
+            <h3>Interactive Courses</h3>
+            <p>Engaging lessons with quizzes, projects, and AI support.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🤖</div>
+            <h3>AI Chatbot Assistance</h3>
+            <p>Get instant help, doubts solved, and personalized guidance.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🏆</div>
+            <h3>Certification</h3>
+            <p>Complete courses and earn recognized certificates.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🌐</div>
+            <h3>Global Access</h3>
+            <p>Learn anytime, anywhere, with multilingual support.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Popular Courses Section -->
+<section class="courses" id="courses">
+    <h2 class="section-title">Popular Courses</h2>
+    <div class="swiper courses-swiper">
+        <div class="swiper-wrapper">
+            <!-- Course Card Example -->
+            <div class="swiper-slide course-card">
+                <img src="https://images.unsplash.com/photo-1526379879527-8559ecfcaec0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Python Programming">
+                <h3>Python Programming</h3>
+                <p>Learn Python from basics to advanced projects.</p>
+                <div class="course-meta">
+                    <span>10h</span>
+                    <span>Beginner</span>
+                </div>
+                <a href="{% url 'signup' %}" class="btn-primary">Enroll Now</a>
+            </div>
+            <div class="swiper-slide course-card">
+                <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Web Development">
+                <h3>Web Development</h3>
+                <p>HTML, CSS, JavaScript, and Django full stack course.</p>
+                <div class="course-meta">
+                    <span>15h</span>
+                    <span>Intermediate</span>
+                </div>
+                <a href="{% url 'signup' %}" class="btn-primary">Enroll Now</a>
+            </div>
+            <div class="swiper-slide course-card">
+                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AI & Machine Learning">
+                <h3>AI & Machine Learning</h3>
+                <p>Master AI concepts with hands-on projects.</p>
+                <div class="course-meta">
+                    <span>20h</span>
+                    <span>Advanced</span>
+                </div>
+                <a href="{% url 'signup' %}" class="btn-primary">Enroll Now</a>
+            </div>
+            <div class="swiper-slide course-card">
+                <img src="https://images.unsplash.com/photo-1662638600476-d563fffbb072?w=600&auto=format&fit=crop&q=60" alt="Data Science">
+                <h3>Data Science</h3>
+                <p>Learn data analysis, visualization, and machine learning.</p>
+                <div class="course-meta">
+                    <span>18h</span>
+                    <span>Intermediate</span>
+                </div>
+                <a href="{% url 'signup' %}" class="btn-primary">Enroll Now</a>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials" id="testimonials">
+    <h2 class="section-title">Student Feedback</h2>
+    <div class="swiper testimonials-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide testimonial-card">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rohit Sharma">
+                <h4>Rohit Sharma</h4>
+                <p>"EduConnectHub helped me learn AI effectively. Highly recommended!"</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="swiper-slide testimonial-card">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Verma">
+                <h4>Priya Verma</h4>
+                <p>"The courses are structured so well and AI support is amazing."</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="swiper-slide testimonial-card">
+                <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Aditya Singh">
+                <h4>Aditya Singh</h4>
+                <p>"I achieved my career goals thanks to EduConnectHub's guidance."</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="swiper-slide testimonial-card">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sneha Patel">
+                <h4>Sneha Patel</h4>
+                <p>"The interactive learning approach made complex topics easy to understand."</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
+<!-- Call To Action Section -->
+<section class="cta" id="signup">
+    <h2>Start Your Learning Journey Today!</h2>
+    <p>Join thousands of students and teachers already achieving success.</p>
+    <div class="cta-buttons">
+        <a href="{% url 'signup' %}" class="btn-primary btn-glow">Sign Up Now</a>
+    </div>
+</section>
+
+
+<!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">EduConnectHub</div>
+            <div class="footer-social">
+                <a href="https://github.com/iradhikagosain">Github</a>
+                <a href="https://in.linkedin.com/in/radhika-gosain-718708324">Linkedin</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <p>Email: support@educonnecthub.com</p>
+                    <p>Phone: +91 1234567890</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}

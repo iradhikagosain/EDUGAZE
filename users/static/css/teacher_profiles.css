@@ -1,0 +1,343 @@
+* { 
+    margin:0; 
+    padding:0; 
+    box-sizing:border-box; 
+    font-family: 'Poppins', sans-serif; 
+}
+body { 
+    scroll-behavior: smooth; 
+    overflow-x: hidden;
+}
+/* ===== Navbar ===== */
+.navbar {
+    position: sticky; 
+    top:0; 
+    width:100%; 
+    background:#5D1218; 
+    z-index:999;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+}
+.nav-container { 
+    display:flex; 
+    justify-content:space-between; 
+    align-items:center; 
+    padding:1rem 2rem; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.nav-links { 
+    display:flex; 
+    list-style:none; 
+    align-items: center;
+}
+.nav-links li { 
+    margin-left:1.5rem; 
+}
+.nav-links a { 
+    color:#fff; 
+    text-decoration:none; 
+    font-weight:500; 
+    transition:0.3s; 
+}
+.nav-links a:hover { 
+    color:#ffb3b6; 
+}
+.btn-nav {
+    background: #A02A2D;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+.btn-nav:hover {
+    background: #7E1D21;
+    transform: scale(1.05);
+}
+.logo { 
+    color:#fff; 
+    font-size:1.5rem; 
+    font-weight:bold; 
+    cursor:pointer; 
+}
+
+/* Hamburger Menu */
+.hamburger { 
+    display:none; 
+    flex-direction:column; 
+    cursor:pointer; 
+}
+.hamburger span { 
+    width:25px; 
+    height:3px; 
+    background:#fff; 
+    margin:4px 0; 
+    transition:0.4s; 
+}
+/* ===== Teacher Profiles Section ===== */
+.teacher-profiles-section {
+    padding: 2rem 1rem;
+    min-height: 80vh;
+    background: #f8f9fa;
+}
+
+.teacher-profiles-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.teacher-username {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Header */
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h1 {
+    color: #5D1218;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.section-header p {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Back Navigation */
+.back-nav {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.btn-back {
+    background: transparent;
+    color: #A02A2D;
+    border: 2px solid #A02A2D;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-back:hover {
+    background: #A02A2D;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(160, 42, 45, 0.3);
+}
+
+/* Teachers Grid */
+.teachers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Teacher Card */
+.teacher-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.teacher-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.teacher-avatar {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.teacher-avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #A02A2D;
+}
+
+.avatar-placeholder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #f8f9fa;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #A02A2D;
+}
+
+.avatar-icon {
+    font-size: 2.5rem;
+}
+
+.teacher-info {
+    flex: 1;
+    margin-bottom: 1.5rem;
+}
+
+.teacher-name {
+    color: #5D1218;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.teacher-subjects {
+    color: #666;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.subject-icon,
+.experience-icon {
+    margin-right: 0.5rem;
+}
+
+.teacher-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #A02A2D;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.2rem;
+}
+
+.teacher-actions {
+    text-align: center;
+}
+
+.btn-view-profile {
+    background: linear-gradient(135deg, #A02A2D 0%, #FF6B6B 100%);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(160, 42, 45, 0.3);
+}
+
+.btn-view-profile:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(160, 42, 45, 0.4);
+    background: linear-gradient(135deg, #FF6B6B 0%, #A02A2D 100%);
+    color: white;
+    text-decoration: none;
+}
+
+/* No Teachers State */
+.no-teachers {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.no-teachers-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.no-teachers h3 {
+    color: #5D1218;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.no-teachers p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .teacher-profiles-section {
+        padding: 1rem 0.5rem;
+    }
+    
+    .section-header h1 {
+        font-size: 2rem;
+    }
+    
+    .teachers-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .teacher-card {
+        padding: 1.5rem;
+    }
+    
+    .teacher-stats {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .teacher-card {
+        padding: 1rem;
+    }
+    
+    .teacher-avatar img,
+    .avatar-placeholder {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .avatar-icon {
+        font-size: 2rem;
+    }
+}

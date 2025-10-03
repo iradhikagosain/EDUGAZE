@@ -1,0 +1,71 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block title %}Login - EduGaze{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="login-section">
+  <div class="login-container">
+    <!-- Header -->
+    <div class="login-header">
+      <h1>Welcome Back</h1>
+      <p>Login to your account</p>
+    </div>
+
+    <!-- Display Django messages -->
+    {% if messages %}
+      {% for message in messages %}
+        <p class="info-message {{ message.tags }}">{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+
+    <!-- Login Form -->
+    <form method="POST" class="login-form">
+      {% csrf_token %}
+      {% if error %}
+        <p class="error-message">{{ error }}</p>
+      {% endif %}
+
+      <!-- Username -->
+      <div class="form-group">
+        <label for="username">Username</label>
+        <i class="fas fa-user input-icon"></i>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <i class="fas fa-lock input-icon"></i>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      </div>
+
+      <!-- Role Selection -->
+      <div class="form-group">
+        <label for="role">Login as</label>
+        <select id="role" name="role" required>
+          <option value="" disabled selected>Select Role</option>
+          <option value="teacher">Teacher</option>
+          <option value="student">Student</option>
+        </select>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn-login">Login</button>
+
+      <!-- Redirect -->
+      <div class="signup-redirect">
+        <p>Don’t have an account? <a href="{% url 'signup' %}">Sign up</a></p>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/login.js' %}"></script>
+{% endblock %}

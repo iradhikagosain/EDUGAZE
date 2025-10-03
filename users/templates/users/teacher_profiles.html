@@ -1,0 +1,90 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block title %}Teacher Profiles - EduConnectHub{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/teacher_profiles.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="teacher-profiles-section">
+    <div class="container">
+        <!-- Header -->
+        <div class="section-header">
+            <h1>Meet Our Teachers</h1>
+            <p>Discover experienced educators from your college and access their learning resources</p>
+        </div>
+
+        <!-- Back Button -->
+        <div class="back-nav">
+            <a href="{% url 'student_dashboard' %}" class="btn-back">
+                ← Back to Dashboard
+            </a>
+        </div>
+
+        <!-- Teachers Grid -->
+        {% if teachers %}
+        <div class="teachers-grid">
+            {% for teacher in teachers %}
+            <div class="teacher-card">
+                <div class="teacher-avatar">
+                    {% if teacher.profile_pic %}
+                        <img src="{{ teacher.profile_pic.url }}" alt="{{ teacher.get_full_name }}">
+                    {% else %}
+                        <div class="avatar-placeholder">
+                            <span class="avatar-icon">👨‍🏫</span>
+                        </div>
+                    {% endif %}
+                </div>
+                
+                <div class="teacher-info">
+                    <!-- Display Full Name instead of username -->
+                    <h3 class="teacher-name">
+                        {% if teacher.first_name or teacher.last_name %}
+                            {{ teacher.first_name }} {{ teacher.last_name }}
+                        {% else %}
+                            {{ teacher.username }}
+                        {% endif %}
+                    </h3>
+                    {% if teacher.subjects %}
+                    <div class="teacher-subjects">
+                        <span class="subject-icon">📚</span>
+                        {{ teacher.subjects }}
+                    </div>
+                    {% endif %}
+                    
+                    <div class="teacher-stats">
+                        <div class="stat">
+                            <span class="stat-number">{{ teacher.note_set.count }}</span>
+                            <span class="stat-label">Notes</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">{{ teacher.lecture_set.count }}</span>
+                            <span class="stat-label">Lectures</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="teacher-actions">
+                    <a href="{% url 'teacher_profile_detail' teacher.id %}" class="btn-view-profile">
+                        View Profile
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="no-teachers">
+            <div class="no-teachers-icon">👨‍🏫</div>
+            <h3>No Teachers Available</h3>
+            <p>There are no teachers registered in your college yet.</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/teacher_profiles.js' %}"></script>
+{% endblock %}
