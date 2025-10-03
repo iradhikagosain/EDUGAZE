@@ -12,7 +12,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-GROQ_API_KEY = "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"
+GROQ_API_KEY =[]
 
 # Application definition
 INSTALLED_APPS = [
