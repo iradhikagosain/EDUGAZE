@@ -52,3 +52,45 @@ Groq API (Chatbot & AI Quiz Generation)
 
 Database:
 SQLite
+
+WORKING:
+project-root/
+│── backend/ # Django backend code
+│── frontend/ # HTML, CSS, JS frontend
+│── media/ # Uploaded lectures/notes
+│── static/ # Static files (CSS, JS, images)
+│── requirements.txt # Python dependencies
+│── manage.py # Django project entry
+│── README.md # Documentation
+
+Follow these steps to set up and run the project locally:  
+
+### 1️⃣ Clone the Repository  
+```bash
+git clone https://github.com/your-username/enhanced-student-teacher-portal.git
+cd enhanced-student-teacher-portal
+
+python -m venv venv
+# On Windows:
+venv\Scripts\activate
+# On Linux/Mac:
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+SECRET_KEY=your-django-secret-key
+DEBUG=True
+DATABASE_URL=sqlite:///db.sqlite3   # or your PostgreSQL URL
+GROQ_API_KEY=your-groq-api-key
+
+python manage.py makemigrations
+python manage.py migrate
+
+
+python manage.py createsuperuser
+
+python manage.py collectstatic
+
+python manage.py runserver
+
+Now visit http://127.0.0.1:8000/
